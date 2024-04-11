@@ -1,0 +1,108 @@
+directive @datatype(name: String!, version: String!) on OBJECT
+
+type AccountResponse @datatype(name: "AccountResponse", version: "1.0"){
+  results: [Account]
+  accountSummaries: [AccountSummary]
+}
+
+type AccountSummary {
+  account: Int
+  accountType: String
+  accountStatus: String
+}
+
+type Account {
+  externalCustomerId: String
+  name: String
+  phones: [Original]
+  emails: [Original]
+  address: String
+  customAttributes: CustomAttributes
+  transactions: [Transaction]
+  actions: [GladlyAction]
+}
+
+type CustomAttributes {
+  accountNumbers: String
+}
+
+type Original {
+  original: String
+}
+
+type GladlyAction {
+  name: String
+  formUrl: String
+}
+
+type AccountRequest {
+  lookupLevel: String
+  query: AccountQuery
+  uniqueMatchRequired: Boolean
+}
+
+type AccountQuery {
+  gateway: String
+  id: String
+  searchEmail: String
+  searchPhone: String
+  accountNumber: String
+  emailCustomer: String
+  phoneCustomer: String
+  emails: [String]
+  phones: [String]
+}
+
+type Product {
+  name: String
+  link: String
+  quantity: String
+  status: String
+  aeropostStatus: String
+  imageUrl: String
+}
+
+interface Order {
+  type: String
+  createdAt: String
+  orderNumber: String
+  orderLink: String
+  orderTotal: String
+  orderStatus: String
+  products: [Product]
+}
+
+interface Package {
+  aerotrack: String
+  description: String
+  statusName: String
+  courierTracking: String
+  declaredValue: String
+  weightKilos: String
+  weightPounds: String
+  publicUrl: String
+  type: String
+  creationDate: String
+  totalCharges: String
+  numberPieces: String
+  subType: String
+}
+
+interface ClientGladly {
+  type: String
+  account: String
+  url: String
+  accountType: String
+  accountStatus: String
+  subType: String
+}
+
+interface ConversationTypificationTransaction {
+  type: String
+  classification: String
+  typification: String
+  subType: String
+}
+
+type Transaction implements Order & Package & ClientGladly & ConversationTypificationTransaction {
+}

@@ -1,0 +1,23 @@
+{
+  "httpMethod": "POST",
+  "contentType": "application/json",
+  "dataType": {
+    "name": "AccountResponse",
+    "version": "1.0"
+  },
+  "request": {
+    "lookupLevel": "",
+    "query": {
+      "gateway": "",
+      "id": "",
+      "searchEmail": "",
+      "searchPhone": "",
+      "accountNumber": "",
+      "emailCustomer": "",
+      "phoneCustomer": "",
+      "emails": [],
+      "phones": []
+    },
+    "uniqueMatchRequired": false
+  }
+}
