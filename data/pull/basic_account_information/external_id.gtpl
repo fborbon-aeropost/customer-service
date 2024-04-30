@@ -1,1 +1,1 @@
-{{.request.gateway .request.accountNumber}}
+{{.request.gateway}} + "-" + {{.request.accountNumber}}
