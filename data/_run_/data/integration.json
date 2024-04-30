@@ -1,0 +1,7 @@
+{
+  "configuration": {
+  },
+  "secrets": {
+    "apiKey": "CUSTOM_API_KEY"
+  }
+}

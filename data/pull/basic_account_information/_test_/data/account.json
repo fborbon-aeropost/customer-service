@@ -1,0 +1,15 @@
+{
+  "lookupLevel": "BASIC",
+  "query": {
+    "gateway": "SJO",
+    "id": "",
+    "searchEmail": "",
+    "searchPhone": "",
+    "accountNumber": "9",
+    "emailCustomer": "",
+    "phoneCustomer": "",
+    "emails": [],
+    "phones": []
+  },
+  "uniqueMatchRequired": true
+}
