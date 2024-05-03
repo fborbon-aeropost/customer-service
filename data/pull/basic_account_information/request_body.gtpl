@@ -1,15 +1,23 @@
 {
-  "lookupLevel": "{{.request.lookupLevel}}",
+  "lookupLevel": "DETAILED",
   "query": {
     "gateway": "{{.request.gateway}}",
-    "id": "{{.request.id}}",
-    "searchEmail": "{{.request.searchEmail}}",
-    "searchPhone": "{{.request.searchPhone}}",
+    "id": "{{.customer.id}}",
+    "searchEmail": "",
+    "searchPhone": "",
     "accountNumber": "{{.request.accountNumber}}",
-    "emailCustomer": "{{.request.emailCustomer}}",
-    "phoneCustomer": "{{.request.phoneCustomer}}",
-    "emails": "{{.request.emails}}",
-    "phones": "{{.request.phones}}"
+    "emailCustomer": "{{.customer.primaryEmailAddress}}",
+    "phoneCustomer": "{{.customer.primaryPhoneNumber.number}}",
+    "emails": [      
+      {{range .customer.emailAddresses}}
+        "{{.}}",
+      {{end}}
+    ],
+    "phones": [
+      {{range .customer.phoneNumbers}}
+          "{{.number}}",
+      {{end}}
+    ]
   },
-  "uniqueMatchRequired": "{{.request.uniqueMatchRequired}}"
+  "uniqueMatchRequired": true
 }

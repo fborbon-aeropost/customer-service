@@ -1,0 +1,25 @@
+{
+  "id": "12345678",
+  "name": "First Last",
+  "address": "123 Street, City, State 12345",
+  "primaryEmailAddress": "primary@email.com",
+  "emailAddresses": [
+    "primary@email.com",
+    "secondary@email.com"
+  ],
+  "primaryPhoneNumber": {
+    "number": "+56756756755",
+    "type": "MOBILE"
+  },
+  "phoneNumbers": [
+    {
+      "number": "+23123123111",
+      "type": "MOBILE"
+    },    
+    {
+      "number": "+56756756755",
+      "type": "MOBILE"
+    }
+  ]
+}
+  

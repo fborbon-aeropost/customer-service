@@ -95,9 +95,11 @@ type AccountRequest {
   uniqueMatchRequired: Boolean
 }
 
-directive @datatype(name: String!, version: String!) on OBJECT
-
-type AccountResponse @datatype(name: "AccountResponse", version: "1.0") {
+type AccountResponse @dataType(name: "AccountResponse", version: "1.0") {
   results: [Account]
   accountSummaries: [AccountSummary]
+}
+
+type Query {
+  account: AccountResponse
 }
