@@ -3,6 +3,8 @@
   "name": "First Last",
   "address": "123 Street, City, State 12345",
   "primaryEmailAddress": "primary@email.com",
+  "accountNumber": "9",
+  "gateway": "SJO",
   "emailAddresses": [
     "primary@email.com",
     "secondary@email.com"
@@ -18,6 +20,14 @@
     },    
     {
       "number": "+155512324234",
+      "type": "MOBILE"
+    },    
+    {
+      "number": "+4634534534534",
+      "type": "MOBILE"
+    },    
+    {
+      "number": "+456456678678",
       "type": "MOBILE"
     }
   ]

@@ -1,21 +1,26 @@
 {
   "lookupLevel": "DETAILED",
   "query": {
-    "gateway": "{{.request.gateway}}",
-    "id": "{{.customer.id}}",
+    "gateway": "{{.customer.gateway}}",
     "searchEmail": "",
     "searchPhone": "",
-    "accountNumber": "{{.request.accountNumber}}",
+    "accountNumber": "{{.customer.accountNumber}}",
     "emailCustomer": "{{.customer.primaryEmailAddress}}",
     "phoneCustomer": "{{.customer.primaryPhoneNumber.number}}",
     "emails": [      
-      {{range .customer.emailAddresses}}
-        "{{.}}",
+      {{if .customer.emailAddresses}}
+        {{$size := (len .customer.emailAddresses)}}
+        {{range $index, $email := .customer.emailAddresses}}
+          "{{$email}}"{{if not (eq $index (sub $size 1))}},{{end}}
+        {{end}}
       {{end}}
     ],
     "phones": [
-      {{range .customer.phoneNumbers}}
-          "{{.number}}",
+      {{if .customer.phoneNumbers}}
+        {{$size := (len .customer.phoneNumbers)}}
+        {{range $index, $phoneNumber := .customer.phoneNumbers}}
+            "{{$phoneNumber.number}}"{{if not (eq $index (sub $size 1))}},{{end}}
+        {{end}}
       {{end}}
     ]
   },

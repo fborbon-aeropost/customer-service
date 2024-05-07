@@ -3,6 +3,8 @@
   "name": "First Last",
   "address": "123 Street, City, State 12345",
   "primaryEmailAddress": "primary@email.com",
+  "accountNumber": "9",
+  "gateway": "SJO",
   "emailAddresses": [
     "primary@email.com",
     "secondary@email.com"
